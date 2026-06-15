@@ -1,0 +1,46 @@
+{
+  "_comment": "Fat Tire factory floor — adapted from MMMF Lesson 9 exercise layout. Distances in feet. Coordinates in px (380px viewport). Supermarket is the anchor (start/end).",
+  "viewport": { "width": 380, "height": 560 },
+  "supermarket": {
+    "id": "supermarket",
+    "label": "Supermarket",
+    "x": 30,
+    "y": 60,
+    "type": "supermarket"
+  },
+  "stops": [
+    { "id": "S01", "label": "Frame Weld",        "x": 110, "y": 60,  "linesideMax": 24, "usagePerCycle": 1 },
+    { "id": "S02", "label": "Fork Assembly",     "x": 190, "y": 60,  "linesideMax": 20, "usagePerCycle": 1 },
+    { "id": "S03", "label": "Brake Set",         "x": 270, "y": 60,  "linesideMax": 18, "usagePerCycle": 1 },
+    { "id": "S04", "label": "Handlebar",         "x": 345, "y": 60,  "linesideMax": 20, "usagePerCycle": 1 },
+    { "id": "S05", "label": "Front Wheel",       "x": 345, "y": 160, "linesideMax": 16, "usagePerCycle": 1 },
+    { "id": "S06", "label": "Rear Wheel",        "x": 345, "y": 250, "linesideMax": 16, "usagePerCycle": 1 },
+    { "id": "S07", "label": "Drivetrain",        "x": 345, "y": 340, "linesideMax": 22, "usagePerCycle": 2 },
+    { "id": "S08", "label": "Saddle / Post",     "x": 270, "y": 340, "linesideMax": 18, "usagePerCycle": 1 },
+    { "id": "S09", "label": "Pedal Set",         "x": 190, "y": 340, "linesideMax": 18, "usagePerCycle": 1 },
+    { "id": "S10", "label": "Cable Routing",     "x": 110, "y": 340, "linesideMax": 30, "usagePerCycle": 3 },
+    { "id": "S11", "label": "Paint Mask",        "x": 30,  "y": 340, "linesideMax": 24, "usagePerCycle": 1 },
+    { "id": "S12", "label": "Final Inspect",     "x": 30,  "y": 250, "linesideMax": 20, "usagePerCycle": 1 },
+    { "id": "S13", "label": "Packaging",         "x": 30,  "y": 160, "linesideMax": 16, "usagePerCycle": 1 },
+    { "id": "S14", "label": "Label / Ship",      "x": 30,  "y": 60,  "linesideMax": 14, "usagePerCycle": 1 }
+  ],
+  "pathSegments": [
+    { "from": "supermarket", "to": "S01",  "feet": 40 },
+    { "from": "S01",         "to": "S02",  "feet": 50 },
+    { "from": "S02",         "to": "S03",  "feet": 50 },
+    { "from": "S03",         "to": "S04",  "feet": 50 },
+    { "from": "S04",         "to": "S05",  "feet": 65 },
+    { "from": "S05",         "to": "S06",  "feet": 60 },
+    { "from": "S06",         "to": "S07",  "feet": 60 },
+    { "from": "S07",         "to": "S08",  "feet": 50 },
+    { "from": "S08",         "to": "S09",  "feet": 50 },
+    { "from": "S09",         "to": "S10",  "feet": 50 },
+    { "from": "S10",         "to": "S11",  "feet": 50 },
+    { "from": "S11",         "to": "S12",  "feet": 60 },
+    { "from": "S12",         "to": "S13",  "feet": 60 },
+    { "from": "S13",         "to": "S14",  "feet": 60 },
+    { "from": "S14",         "to": "supermarket", "feet": 40 }
+  ],
+  "_totalRouteFeet": 745,
+  "_note": "Total 745 ft for a full 14-stop clockwise loop. Matches Lesson 9 exercise scale (~810 ft with slightly different stop spacing). Adjust coordinates and distances after Richard approves the map (Open Item #1)."
+}

@@ -1,0 +1,13 @@
+{
+  "name": "lean-game",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "vitest": "^1.6.0",
+    "typescript": "^5.5.0"
+  }
+}
