@@ -1,0 +1,43 @@
+{
+  "viewport": { "width": 380, "height": 400 },
+  "supermarket": {
+    "id": "supermarket",
+    "label": "Supermarket",
+    "x": 30,
+    "y": 60,
+    "type": "supermarket"
+  },
+  "stops": [
+    { "id": "S01", "label": "Frame Weld",    "x": 110, "y": 60,  "linesideMax": 24, "usagePerCycle": 1, "piecesPerContainer": 8 },
+    { "id": "S02", "label": "Fork Assy",     "x": 190, "y": 60,  "linesideMax": 20, "usagePerCycle": 1, "piecesPerContainer": 5 },
+    { "id": "S03", "label": "Brake Set",     "x": 270, "y": 60,  "linesideMax": 18, "usagePerCycle": 1, "piecesPerContainer": 6 },
+    { "id": "S04", "label": "Handlebar",     "x": 350, "y": 60,  "linesideMax": 20, "usagePerCycle": 1, "piecesPerContainer": 5 },
+    { "id": "S05", "label": "Front Wheel",   "x": 350, "y": 150, "linesideMax": 16, "usagePerCycle": 1, "piecesPerContainer": 4 },
+    { "id": "S06", "label": "Rear Wheel",    "x": 350, "y": 240, "linesideMax": 16, "usagePerCycle": 1, "piecesPerContainer": 4 },
+    { "id": "S07", "label": "Drivetrain",    "x": 350, "y": 330, "linesideMax": 22, "usagePerCycle": 2, "piecesPerContainer": 6 },
+    { "id": "S08", "label": "Saddle/Post",   "x": 270, "y": 330, "linesideMax": 18, "usagePerCycle": 1, "piecesPerContainer": 6 },
+    { "id": "S09", "label": "Pedal Set",     "x": 190, "y": 330, "linesideMax": 18, "usagePerCycle": 1, "piecesPerContainer": 6 },
+    { "id": "S10", "label": "Cable Route",   "x": 110, "y": 330, "linesideMax": 30, "usagePerCycle": 3, "piecesPerContainer": 10 },
+    { "id": "S11", "label": "Paint Mask",    "x": 30,  "y": 330, "linesideMax": 24, "usagePerCycle": 1, "piecesPerContainer": 8 },
+    { "id": "S12", "label": "Final Inspect", "x": 30,  "y": 240, "linesideMax": 20, "usagePerCycle": 1, "piecesPerContainer": 5 },
+    { "id": "S13", "label": "Packaging",     "x": 30,  "y": 150, "linesideMax": 16, "usagePerCycle": 1, "piecesPerContainer": 4 },
+    { "id": "S14", "label": "Label/Ship",    "x": 110, "y": 150, "linesideMax": 14, "usagePerCycle": 1, "piecesPerContainer": 4 }
+  ],
+  "pathSegments": [
+    { "from": "supermarket", "to": "S01",  "feet": 40 },
+    { "from": "S01",         "to": "S02",  "feet": 55 },
+    { "from": "S02",         "to": "S03",  "feet": 55 },
+    { "from": "S03",         "to": "S04",  "feet": 55 },
+    { "from": "S04",         "to": "S05",  "feet": 60 },
+    { "from": "S05",         "to": "S06",  "feet": 60 },
+    { "from": "S06",         "to": "S07",  "feet": 60 },
+    { "from": "S07",         "to": "S08",  "feet": 55 },
+    { "from": "S08",         "to": "S09",  "feet": 55 },
+    { "from": "S09",         "to": "S10",  "feet": 55 },
+    { "from": "S10",         "to": "S11",  "feet": 55 },
+    { "from": "S11",         "to": "S12",  "feet": 60 },
+    { "from": "S12",         "to": "S13",  "feet": 60 },
+    { "from": "S13",         "to": "S14",  "feet": 55 },
+    { "from": "S14",         "to": "supermarket", "feet": 40 }
+  ]
+}
