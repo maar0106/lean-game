@@ -7,6 +7,7 @@ import FactoryMap from "./components/FactoryMap";
 import RouteSequencer from "./components/RouteSequencer";
 import CadenceDial from "./components/CadenceDial";
 import CycleEstimatePanel from "./components/CycleEstimatePanel";
+import InfoAccordion from "./components/InfoAccordion";
 import "./App.css";
 
 const SHIFT_MINUTES = 480;
@@ -47,6 +48,32 @@ export default function App() {
       </header>
 
       <main className="app-main">
+        <section className="howto-section">
+          <InfoAccordion title="❔ How to play" defaultOpen={sequence.length === 0}>
+            <p>
+              You're the <strong>water spider</strong> — the person who runs parts from
+              the supermarket out to the line. Every stop on the factory floor eats
+              parts constantly while the line runs. Your job is to design a delivery
+              loop (a "milk run") that keeps every stop stocked without you wasting
+              time or flooding the floor with inventory.
+            </p>
+            <ol>
+              <li><strong>Tap stops on the map</strong> to add them to your route. Tap an added stop again to remove it.</li>
+              <li><strong>Drag rows</strong> in "Route Order" to change the visiting sequence — order changes travel distance.</li>
+              <li><strong>Use − / +</strong> to set how many containers (kanban bins) you deliver to each stop per visit. More containers = more pieces delivered, but also more time spent picking and unloading.</li>
+              <li><strong>Pick a cadence</strong> — how often you relaunch the route. "Loop" means you head out again the instant you return; longer cadences mean longer gaps between visits to every stop.</li>
+              <li><strong>Watch the cycle time estimate</strong> below — it tells you, before you ever run the shift, whether your plan is even physically possible in the time you've allowed.</li>
+            </ol>
+            <p>
+              The trade-off is the whole game: <strong>frequent small deliveries</strong> keep
+              stations lean but mean more trips and more time at the supermarket picking;
+              <strong> infrequent big deliveries</strong> mean fewer trips but each one takes
+              longer to pick and unload — and stations sit fuller (more inventory tied up)
+              while they wait.
+            </p>
+          </InfoAccordion>
+        </section>
+
         <section className="map-section">
           <p className="section-hint">Tap stops to add · tap again to remove</p>
           <FactoryMap layout={typedLayout} sequence={sequence} onToggleStop={handleToggleStop} />

@@ -270,6 +270,85 @@ section { margin-top: 16px; }
   font-weight: 500;
 }
 
+/* ── Info accordion ── */
+.info-accordion {
+  margin-top: 10px;
+}
+
+.info-accordion-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.info-chevron {
+  transition: transform 0.2s;
+  color: var(--text-muted);
+}
+.info-chevron.open {
+  transform: rotate(180deg);
+}
+
+.info-accordion-body {
+  margin-top: 8px;
+  padding: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.info-accordion-body p {
+  margin-bottom: 10px;
+}
+.info-accordion-body p:last-child {
+  margin-bottom: 0;
+}
+
+.info-accordion-body ol {
+  margin: 0 0 10px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.info-accordion-body li {
+  font-size: 13px;
+}
+
+/* ── How-to section (top-level) ── */
+.howto-section {
+  margin-top: 0;
+}
+
+/* ── Estimate explanation list ── */
+.est-explain dt {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-top: 10px;
+}
+.est-explain dt:first-child {
+  margin-top: 0;
+}
+.est-explain dd {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 3px 0 0 0;
+  line-height: 1.5;
+}
+
 /* ── Run button ── */
 .run-section {
   text-align: center;
