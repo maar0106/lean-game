@@ -1,4 +1,4 @@
-import React from "react";
+
 import type { Layout, RouteStop } from "../lib/types";
 
 interface Props {
@@ -25,9 +25,6 @@ export default function FactoryMap({ layout, sequence, onToggleStop }: Props) {
   const { supermarket, stops } = layout;
   const width = 380;
   const height = 400; // stops span y=60..340; add padding
-
-  // Scale to fit container (max 100% width)
-  const scale = 1;
 
   const activeIds = new Set(sequence.map((s) => s.stopId));
   const orderMap = new Map(sequence.map((s, i) => [s.stopId, i + 1]));

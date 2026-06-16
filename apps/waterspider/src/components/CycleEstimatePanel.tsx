@@ -1,4 +1,4 @@
-import React from "react";
+
 import type { CycleEstimate } from "../lib/planEstimator";
 
 interface Props {

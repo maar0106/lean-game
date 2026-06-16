@@ -1,4 +1,4 @@
-import React from "react";
+
 
 const OPTIONS = [
   { label: "Loop", value: 0, desc: "Relaunch immediately on return" },

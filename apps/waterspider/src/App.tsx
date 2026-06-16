@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import layout from "./layout.json";
 import type { Layout, RouteStop } from "./lib/types";
 import { buildSegmentMap, routeTotalFeet } from "./lib/routeDistance";
@@ -27,7 +27,7 @@ export default function App() {
     }
   }
 
-  const totalFeet = useMemo(() => routeTotalFeet(sequence, typedLayout, segMap), [sequence]);
+  const totalFeet = useMemo(() => routeTotalFeet(sequence, segMap), [sequence]);
   const totalContainers = useMemo(() => sequence.reduce((acc, s) => acc + s.containers, 0), [sequence]);
   const estimate = useMemo(
     () => sequence.length > 0 ? estimateCycle(sequence.length, totalContainers, totalFeet) : null,

@@ -12,7 +12,6 @@ export function buildSegmentMap(layout: Layout): Map<string, number> {
 
 export function routeTotalFeet(
   sequence: RouteStop[],
-  layout: Layout,
   segMap: Map<string, number>
 ): number {
   if (sequence.length === 0) return 0;
