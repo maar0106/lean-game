@@ -187,9 +187,8 @@ section { margin-top: 16px; }
 .remove-btn:hover { color: var(--red); }
 
 /* ── Cadence dial ── */
-.cadence-options {
+.cadence-modes {
   display: flex;
-  flex-wrap: wrap;
   gap: 6px;
   margin-top: 6px;
 }
@@ -198,7 +197,7 @@ section { margin-top: 16px; }
   background: var(--surface);
   border: 1px solid var(--border);
   color: var(--text-muted);
-  padding: 6px 12px;
+  padding: 6px 14px;
   border-radius: 20px;
   font-size: 12px;
   cursor: pointer;
@@ -209,6 +208,39 @@ section { margin-top: 16px; }
   border-color: var(--accent);
   color: #fff;
   font-weight: 600;
+}
+
+.cadence-slider-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+.cadence-slider-row.disabled {
+  opacity: 0.4;
+}
+.cadence-slider-row input[type="range"] {
+  flex: 1;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+.cadence-slider-row.disabled input[type="range"] {
+  cursor: not-allowed;
+}
+.cadence-readout {
+  min-width: 56px;
+  text-align: right;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.cadence-hint {
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.4;
 }
 
 /* ── Estimate panel ── */

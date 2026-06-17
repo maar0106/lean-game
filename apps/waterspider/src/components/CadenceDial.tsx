@@ -1,36 +1,60 @@
-
-
-const OPTIONS = [
-  { label: "Loop", value: 0, desc: "Relaunch immediately on return" },
-  { label: "30 min", value: 30, desc: "Every 30 minutes" },
-  { label: "60 min", value: 60, desc: "Every 60 minutes" },
-  { label: "90 min", value: 90, desc: "Every 90 minutes" },
-  { label: "120 min", value: 120, desc: "Every 2 hours" },
-  { label: "240 min", value: 240, desc: "Every 4 hours" },
-  { label: "480 min", value: 480, desc: "Once per shift" },
-];
-
 interface Props {
-  value: number;
+  value: number; // 0 = continuous loop; otherwise minutes between launches
   onChange: (v: number) => void;
 }
 
+const MIN = 10;
+const MAX = 480;
+const STEP = 10;
+const DEFAULT_TIMED = 90; // value to restore when switching off Loop
+
 export default function CadenceDial({ value, onChange }: Props) {
+  const isLoop = value === 0;
+  // The slider always shows a valid timed value, even while Loop is active
+  const sliderValue = isLoop ? DEFAULT_TIMED : value;
+
   return (
     <div className="cadence-dial">
       <label className="section-label">Delivery Cadence</label>
-      <div className="cadence-options">
-        {OPTIONS.map((opt) => (
-          <button
-            key={opt.value}
-            className={`cadence-btn ${value === opt.value ? "active" : ""}`}
-            onClick={() => onChange(opt.value)}
-            title={opt.desc}
-          >
-            {opt.label}
-          </button>
-        ))}
+
+      <div className="cadence-modes">
+        <button
+          className={`cadence-btn ${isLoop ? "active" : ""}`}
+          onClick={() => onChange(0)}
+          title="Relaunch the route the instant the tugger returns"
+        >
+          ↻ Loop
+        </button>
+        <button
+          className={`cadence-btn ${!isLoop ? "active" : ""}`}
+          onClick={() => onChange(sliderValue)}
+          title="Launch the route on a fixed timer"
+        >
+          ⏱ Timed
+        </button>
       </div>
+
+      <div className={`cadence-slider-row ${isLoop ? "disabled" : ""}`}>
+        <input
+          type="range"
+          min={MIN}
+          max={MAX}
+          step={STEP}
+          value={sliderValue}
+          disabled={isLoop}
+          onChange={(e) => onChange(Number(e.target.value))}
+          aria-label="Delivery cadence in minutes"
+        />
+        <span className="cadence-readout">
+          {isLoop ? "—" : `${sliderValue} min`}
+        </span>
+      </div>
+
+      <p className="cadence-hint">
+        {isLoop
+          ? "Continuous loop — the tugger heads back out the moment it returns."
+          : `Launch a new run every ${sliderValue} minutes.`}
+      </p>
     </div>
   );
 }
