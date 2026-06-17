@@ -3,9 +3,9 @@ interface Props {
   onChange: (v: number) => void;
 }
 
-const MIN = 10;
+const MIN = 5;
 const MAX = 480;
-const STEP = 10;
+const STEP = 5;
 const DEFAULT_TIMED = 90; // value to restore when switching off Loop
 
 export default function CadenceDial({ value, onChange }: Props) {
